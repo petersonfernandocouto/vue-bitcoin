@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import Hero from '../ComponentesPag/Hero.vue'
 
 const isMenuOpen = ref(false)
 
@@ -106,5 +107,7 @@ const closeMenuOnClick = (sectionId: string) => {
     </header>
 
   </div>
+
+      <Hero />
   
 </template>
