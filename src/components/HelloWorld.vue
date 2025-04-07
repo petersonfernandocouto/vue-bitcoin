@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Hero from '../ComponentesPag/Hero.vue'
+import PrecoUSD from '../ComponentesPag/PrecoUSD.vue'
+import Ranking from '../ComponentesPag/Ranking.vue'
 
 const isMenuOpen = ref(false)
 
@@ -108,6 +110,23 @@ const closeMenuOnClick = (sectionId: string) => {
 
   </div>
 
-      <Hero />
+    <div>
+
+        <Hero />
+
+    </div>
+
+    <div>
+
+        <PrecoUSD />
+
+    </div>
+
+    <div>
+
+          <Ranking />
+      
+    </div>
+      
   
 </template>
