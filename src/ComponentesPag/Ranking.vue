@@ -7,16 +7,6 @@ const bitcoinData = ref<any>(null);
 const loading = ref(true);
 const error = ref<string | null>(null);
 
-// Formatador de número
-const formatNumber = (value: string | number): string => {
-  if (value === null || value === undefined || isNaN(Number(value))) return "N/A";
-  const numberValue = typeof value === "string" ? parseFloat(value) : value;
-  return numberValue.toLocaleString("pt-BR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
-};
-
 // Buscar os dados da API
 onMounted(async () => {
   try {

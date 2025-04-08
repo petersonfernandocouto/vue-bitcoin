@@ -9,12 +9,12 @@ export default defineConfig({
     vue(),
     Components({
       resolvers: [
-        // Permite usar qualquer ícone como componente
+        
         IconsResolver({
-          prefix: 'Icon', // prefixo para evitar conflitos, ex: <IconSiBitcoinsv />
+          prefix: 'Icon', 
         }),
       ],
     }),
-    Icons(), // necessário para carregar os ícones
+    Icons(), 
   ],
 })

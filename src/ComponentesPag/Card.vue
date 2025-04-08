@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { getBitcoinData } from "../services/api";
 import CardIMG from '../IMG/CardIMG.png'
 
 
