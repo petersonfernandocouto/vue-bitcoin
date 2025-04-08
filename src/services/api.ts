@@ -1,15 +1,28 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "https://api.coincap.io/v2/assets",
-});
+export async function getBitcoinData() {
+  const response = await axios.get("https://api.coingecko.com/api/v3/coins/markets", {
+    params: {
+      vs_currency: "usd",
+      ids: "bitcoin",
+    },
+  });
 
-export const getBitcoinData = async () => {
-  try {
-    const response = await api.get("/bitcoin");
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao buscar dados do Bitcoin:", error);
-    return null;
-  }
-};
+  const bitcoin = response.data[0];
+
+  return {
+    data: {
+      name: bitcoin.name,
+      symbol: bitcoin.symbol.toUpperCase(),
+      priceUsd: bitcoin.current_price,
+      rank: bitcoin.market_cap_rank,
+      supply: bitcoin.circulating_supply,
+      maxSupply: bitcoin.total_supply,
+      marketCapUsd: bitcoin.market_cap,
+      volumeUsd24Hr: bitcoin.total_volume,
+      changePercent24Hr: bitcoin.price_change_percentage_24h,
+      vwap24Hr: bitcoin.current_price,
+      explorer: bitcoin.explorer, 
+    },
+  };
+}
