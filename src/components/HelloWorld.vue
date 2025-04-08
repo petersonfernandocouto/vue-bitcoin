@@ -3,6 +3,10 @@ import { ref } from 'vue'
 import Hero from '../ComponentesPag/Hero.vue'
 import PrecoUSD from '../ComponentesPag/PrecoUSD.vue'
 import Ranking from '../ComponentesPag/Ranking.vue'
+import ValorBitcoin from '../ComponentesPag/ValorBitcoin.vue'
+import Card from '../ComponentesPag/Card.vue'
+import UltimosPrecos from '../ComponentesPag/UltimosPrecos.vue'
+import Footer from '../ComponentesPag/Footer.vue'
 
 const isMenuOpen = ref(false)
 
@@ -38,7 +42,7 @@ const closeMenuOnClick = (sectionId: string) => {
         @click="toggleMenu"
         class="fixed flex items-center top-4 right-0 p-4 z-40 lg:hidden rounded-lg"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="text-white" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-white " width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -46,7 +50,7 @@ const closeMenuOnClick = (sectionId: string) => {
     </div>
 
     <!-- Menu -->
-    <header class="h-10 md:h-20 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-[#9003fc] text-white font-bold mb-24 lg:mb-0">
+    <header class="h-10 md:h-20 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-[#9003fc] font-bold mb-24 lg:mb-0">
 
       <a href="#" class="text-[#024218]">
         <!-- Ícone principal -->
@@ -123,9 +127,33 @@ const closeMenuOnClick = (sectionId: string) => {
     </div>
 
     <div>
+      
+      <ValorBitcoin />
+
+    </div>
+
+    <div>
 
           <Ranking />
       
+    </div>
+
+    <div>
+
+      <Card />
+
+    </div>
+
+    <div>
+
+      <UltimosPrecos />
+
+    </div>
+
+    <div>
+
+      <Footer />
+
     </div>
       
   
